@@ -1,0 +1,12 @@
+body {
+    background-image: url('../images/nba.jpg');
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-container {
+    padding: 70px 125px 0px 125px;
+}
