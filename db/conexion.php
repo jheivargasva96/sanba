@@ -14,14 +14,30 @@ function dbConectar(){
     }
 }
 
-function selectSql($campos = '', $tabla = '', $data = array()){
+function selectSql($campos = '', $tabla = '', $where = ''){
     global $connect;
-    $result = array('success'=> 0, 'message' => 'Peticion no procesada', 'data' => array());
-    $where = array();
-    foreach ($data as $key => $value) {
-        $where[] = key . ':' . $key;
+    $result = array('success'=> 0, 'message' => 'Peticion no procesada', 'data' => array(),'rows' => 0);
+    if ($where != '') {
+        $where = ' WHERE ' . $where;
     }
-    $sql = $connect->prepare("SELECT " . $campos . " FROM " . $tabla . " WHERE " . implode(', :',array_keys($data)) . ")");
+    $sql = $connect->prepare("SELECT " . $campos . " FROM " . $tabla . $where);
+    try {
+        $connect->beginTransaction();
+        $sql->execute();
+        $connect->commit();
+        $result['success'] = 1;
+        $result['message'] = 'Consulta ejecutada correctamente.';
+        for($i=0; $row = $sql->fetch(); $i++){
+            $result['data'][] = $row;
+        }
+        $result['rows'] = $i;
+    }catch (Exception $e){
+        $connect->rollback();
+        throw $e;
+        $result['success'] = 0;
+        $result['message'] = $e->getMessage();
+    }
+    return $result;
 }
 
 function insertSql($table = '', $data = array()){
