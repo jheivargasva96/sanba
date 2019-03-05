@@ -7,7 +7,6 @@ function saveInformation(selector) {
     var form = selector.attr('form');
     var result = document.getElementById(form).checkValidity();
     if (result) {
-        var adicional = selector.attr('adicional');
         var modal = selector.attr('modal');
         $("#" + modal).modal('hide');
         $.ajax({
@@ -26,9 +25,12 @@ function saveInformation(selector) {
                 $("#showAlerts").attr("data-target", "#" + action + "-modal");
                 $("#alert-" + action).html('<p>' + datos.message + '</p>');
                 $("#showAlerts").click();
-                if (adicional != '') {
+                if (selector.attr('adicional')) {
+                    var adicional = selector.attr('adicional');
                     adicional = adicional.split('-');
                     $("#" + adicional[0]).load(adicional[1]);
+                } else {
+                    window.location.reload();
                 }
             }
         });
