@@ -1,3 +1,7 @@
 .error{
     box-shadow: 0px 0px 0px 1px red;
 }
+
+#dv_guardar_partido{
+    display: none;
+}

@@ -7,7 +7,7 @@ if (@$_REQUEST['idliga']) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <?php include('include/head.php'); ?>
@@ -65,9 +65,7 @@ if (@$_REQUEST['idliga']) {
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="input-group">
-                                                        <input class="btn btn-primary btn-lg btn-block btnguardar"
-                                                            form="informationform" modal="equipo-modal" type="button"
-                                                            value="Guardar">
+                                                        <input class="btn btn-primary btn-lg btn-block btnguardar" form="informationform" modal="equipo-modal" type="button" value="Guardar">
                                                     </div>
                                                 </div>
                                             </div>
@@ -103,290 +101,125 @@ if (@$_REQUEST['idliga']) {
                                         <button type="button" class="close" data-dismiss="modal"
                                             aria-hidden="true">×</button>
                                         <div class="clearfix">
-                                            <h4 class="text-blue">Adicionar Partido</h4>
+                                            <center>
+                                                <h4 class="text-blue">Adicionar Partido</h4>
+                                            </center>
                                         </div>
-                                        <form id="partido_informationform" class="tab-wizard wizard-circle wizard vertical">
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-3 col-form-label">Fecha</label>
-                                                <div class="col-sm-12 col-md-9">
-                                                    <input type="text" class="form-control" name="fecha_partido"
-                                                        id="fecha_partido" value="<?php echo date('Y-m-d'); ?>"
-                                                        disabled>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-3 col-form-label">Equipo Local*</label>
-                                                <div class="col-sm-12 col-md-9">
-                                                    <select class="custom-select col-12" name="equipo_local"
-                                                        id="equipo_local" required>
-                                                        <? include('include/cargarEquipos.php'); ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-3 col-form-label">Equipo
-                                                    Visitante*</label>
-                                                <div class="col-sm-12 col-md-9">
-                                                    <select class="custom-select col-12" name="equipo_visitante"
-                                                        id="equipo_visitante" required>
-                                                        <? include('include/cargarEquipos.php'); ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <input type="hidden" name="table" id="table" value="partido">
-                                                <input type="hidden" name="liga_idliga" id="liga_idliga"
-                                                    value="<? echo $_SESSION['idliga']; ?>">
-                                            </div>
-                                            <div>
-                                                <div class="col-sm-12">
-                                                    <div style="text-align: center;">
-                                                        <input class="btn btn-primary btnguardar"
-                                                            form="partido_informationform" modal="partido-modal"
-                                                            type="button" value="Guardar" adicional="">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </form>
-
+                                        <br>
                                         <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
-                                            <div class="clearfix">
-                                                <h4 class="text-blue">Step wizard vertical</h4>
-                                                <p class="mb-30 font-14">jQuery Step wizard</p>
-                                            </div>
                                             <div class="wizard-content">
-                                                <form class="tab-wizard wizard-circle wizard vertical">
-                                                    <h5>Personal Info</h5>
+                                                <form id="partido_informationform"
+                                                    class="tab-wizard wizard-circle wizard vertical">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-12 col-md-3 col-form-label">Fecha</label>
+                                                        <div class="col-sm-12 col-md-9">
+                                                            <input type="text" class="form-control" name="fecha_partido"
+                                                                id="fecha_partido" value="<?php echo date('Y-m-d'); ?>"
+                                                                readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <h5>Equipo Local</h5>
                                                     <section>
                                                         <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label>First Name :</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label>Last Name :</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label>Email Address :</label>
-                                                                    <input type="email" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label>Phone Number :</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label>Select City :</label>
-                                                                    <select class="custom-select form-control">
-                                                                        <option value="">Select City</option>
-                                                                        <option value="Amsterdam">India</option>
-                                                                        <option value="Berlin">UK</option>
-                                                                        <option value="Frankfurt">US</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label>Date of Birth :</label>
-                                                                    <input type="text" class="form-control date-picker"
-                                                                        placeholder="Select Date">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </section>
-                                                    <!-- Step 2 -->
-                                                    <h5>Job Status</h5>
-                                                    <section>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label>Job Title :</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label>Company Name :</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
                                                             <div class="col-md-12">
-                                                                <div class="form-group">
-                                                                    <label>Job Description :</label>
-                                                                    <textarea class="form-control"></textarea>
+                                                                <div class="form-group row">
+                                                                    <label class="col-sm-4 col-md-4 col-form-label">Equipo Local* :</label>
+                                                                    <div class="col-sm-8 col-md-8">
+                                                                        <select class="custom-select col-12" name="equipo_local" id="equipo_local" required>
+                                                                            <? include('include/cargarEquipos.php'); ?>
+                                                                        </select>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </section>
-                                                    <!-- Step 3 -->
-                                                    <h5>Interview</h5>
-                                                    <section>
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label>Interview For :</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Interview Type :</label>
-                                                                    <select class="form-control">
-                                                                        <option>Normal</option>
-                                                                        <option>Difficult</option>
-                                                                        <option>Hard</option>
-                                                                    </select>
+                                                                    <label>Cuarto Uno* :</label>
+                                                                    <input type="number" class="form-control" name="cuarto_uno_local" id="cuarto_uno_local" min="0" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label>Interview Date :</label>
-                                                                    <input type="text" class="form-control date-picker"
-                                                                        placeholder="Select Date">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Interview Time :</label>
-                                                                    <input class="form-control time-picker"
-                                                                        placeholder="Select time" type="text">
+                                                                    <label>Cuarto Dos* :</label>
+                                                                    <input type="number" class="form-control" name="cuarto_dos_local" id="cuarto_dos_local" min="0" required>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </section>
-                                                    <!-- Step 4 -->
-                                                    <h5>Remark</h5>
-                                                    <section>
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label>Behaviour :</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Confidance</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Result</label>
-                                                                    <select class="form-control">
-                                                                        <option>Select Result</option>
-                                                                        <option>Selected</option>
-                                                                        <option>Rejected</option>
-                                                                    </select>
+                                                                    <label>Cuarto Tres* :</label>
+                                                                    <input type="number" class="form-control" name="cuarto_tres_local" id="cuarto_tres_local" min="0" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label>Comments</label>
-                                                                    <textarea class="form-control"></textarea>
+                                                                    <label>Cuarto Cuatro* :</label>
+                                                                    <input type="number" class="form-control" name="cuarto_cuatro_local" id="cuarto_cuatro_local" min="0" required>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </section>
+
+                                                    <h5>Equipo Visitante</h5>
+                                                    <section>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group row">
+                                                                    <label class="col-sm-3 col-md-4 col-form-label">Equipo Visitante* :</label>
+                                                                    <div class="col-sm-9 col-md-8">
+                                                                        <select class="custom-select col-12" name="equipo_visitante" id="equipo_visitante" required>
+                                                                            <? include('include/cargarEquipos.php'); ?>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label>Cuarto Uno* :</label>
+                                                                    <input type="number" class="form-control" name="cuarto_uno_visitante" id="cuarto_uno_visitante" min="0" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label>Cuarto Dos* :</label>
+                                                                    <input type="number" class="form-control" name="cuarto_dos_visitante" id="cuarto_dos_visitante" min="0" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label>Cuarto Tres* :</label>
+                                                                    <input type="number" class="form-control" name="cuarto_tres_visitante" id="cuarto_tres_visitante" min="0" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label>Cuarto Cuatro* :</label>
+                                                                    <input type="number" class="form-control" name="cuarto_cuatro_visitante" id="cuarto_cuatro_visitante" min="0" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                    <input type="hidden" name="table" id="table" value="partido">
                                                 </form>
                                             </div>
                                         </div>
+
+                                        <div id="dv_guardar_partido">
+                                            <div class="col-sm-12">
+                                                <div style="text-align: center;">
+                                                    <input class="btn btn-primary btnguardar" form="partido_informationform" modal="partido-modal" type="button" value="Guardar" adicional="promedios_generales-include/cargarPromedios.php" id="guardar_partido">
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <script src="vendors/scripts/libSteps.js"></script>
-
-                                        <form>
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-2 col-form-label">Text</label>
-                                                <div class="col-sm-12 col-md-10">
-                                                    <input class="form-control" type="text" placeholder="Johnny Brown">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-2 col-form-label">Search</label>
-                                                <div class="col-sm-12 col-md-10">
-                                                    <input class="form-control" placeholder="Search Here" type="search">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-2 col-form-label">Email</label>
-                                                <div class="col-sm-12 col-md-10">
-                                                    <input class="form-control" value="bootstrap@example.com"
-                                                        type="email">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-2 col-form-label">URL</label>
-                                                <div class="col-sm-12 col-md-10">
-                                                    <input class="form-control" value="https://getbootstrap.com"
-                                                        type="url">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-2 col-form-label">Telephone</label>
-                                                <div class="col-sm-12 col-md-10">
-                                                    <input class="form-control" value="1-(111)-111-1111" type="tel">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-2 col-form-label">Password</label>
-                                                <div class="col-sm-12 col-md-10">
-                                                    <input class="form-control" value="password" type="password">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-2 col-form-label">Number</label>
-                                                <div class="col-sm-12 col-md-10">
-                                                    <input class="form-control" value="100" type="number">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="example-datetime-local-input"
-                                                    class="col-sm-12 col-md-2 col-form-label">Date and time</label>
-                                                <div class="col-sm-12 col-md-10">
-                                                    <input class="form-control datetimepicker"
-                                                        placeholder="Choose Date anf time" type="text">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-2 col-form-label">Date</label>
-                                                <div class="col-sm-12 col-md-10">
-                                                    <input class="form-control date-picker" placeholder="Select Date"
-                                                        type="text">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-2 col-form-label">Month</label>
-                                                <div class="col-sm-12 col-md-10">
-                                                    <input class="form-control month-picker" placeholder="Select Month"
-                                                        type="text">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-2 col-form-label">Time</label>
-                                                <div class="col-sm-12 col-md-10">
-                                                    <input class="form-control time-picker td-input"
-                                                        placeholder="Select time" type="text" readonly="">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-2 col-form-label">Color</label>
-                                                <div class="col-sm-12 col-md-10">
-                                                    <input class="form-control" value="#563d7c" type="color">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-12 col-md-2 col-form-label">Input Range</label>
-                                                <div class="col-sm-12 col-md-10">
-                                                    <input class="form-control" value="50" type="range">
-                                                </div>
-                                            </div>
-                                        </form>
                                     </div>
                                 </div>
                             </div>

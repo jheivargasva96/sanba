@@ -30,7 +30,7 @@ function saveInformation(selector) {
                     adicional = adicional.split('-');
                     $("#" + adicional[0]).load(adicional[1]);
                 } else {
-                    window.location.reload();
+                    window.location.href="principal.php";
                 }
             }
         });

@@ -4,12 +4,12 @@ $(".tab-wizard").steps({
     transitionEffect: "fade",
     titleTemplate: '<span class="step">#index#</span> #title#',
     labels: {
-        finish: "Submit"
+        finish: "Guardar"
     },
     onStepChanged: function (event, currentIndex, priorIndex) {
         $('.steps .current').prevAll().addClass('disabled');
     },
     onFinished: function (event, currentIndex) {
-        $('#success-modal').modal('show');
+        $('#guardar_partido').click();
     }
 });
