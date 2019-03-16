@@ -14,6 +14,7 @@ if (@$_REQUEST['idliga']) {
     <?php include('include/script.php'); ?>
     <link rel="stylesheet" type="text/css" href="vendors/styles/sanba_principal.css" media="screen">
     <link rel="stylesheet" type="text/css" href="src/plugins/jquery-steps/build/jquery.steps.css">
+    <link rel="stylesheet" type="text/css" href="src/plugins/jvectormap/jquery-jvectormap-2.0.3.css">
 </head>
 
 <body>
@@ -118,6 +119,12 @@ if (@$_REQUEST['idliga']) {
                                                                 readonly>
                                                         </div>
                                                     </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-12 col-md-3 col-form-label">Ganador</label>
+                                                        <div class="col-sm-12 col-md-9">
+                                                            <input type="text" class="form-control" name="ganador" id="ganador" value="" disabled>
+                                                        </div>
+                                                    </div>
 
                                                     <h5>Equipo Local</h5>
                                                     <section>
@@ -137,13 +144,13 @@ if (@$_REQUEST['idliga']) {
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Cuarto Uno* :</label>
-                                                                    <input type="number" class="form-control" name="cuarto_uno_local" id="cuarto_uno_local" min="0" required>
+                                                                    <input type="number" class="form-control" name="cuarto_uno_local" id="cuarto_uno_local" min="0" value="0" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Cuarto Dos* :</label>
-                                                                    <input type="number" class="form-control" name="cuarto_dos_local" id="cuarto_dos_local" min="0" required>
+                                                                    <input type="number" class="form-control" name="cuarto_dos_local" id="cuarto_dos_local" min="0" value="0" required>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -151,13 +158,13 @@ if (@$_REQUEST['idliga']) {
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Cuarto Tres* :</label>
-                                                                    <input type="number" class="form-control" name="cuarto_tres_local" id="cuarto_tres_local" min="0" required>
+                                                                    <input type="number" class="form-control" name="cuarto_tres_local" id="cuarto_tres_local" min="0" value="0" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Cuarto Cuatro* :</label>
-                                                                    <input type="number" class="form-control" name="cuarto_cuatro_local" id="cuarto_cuatro_local" min="0" required>
+                                                                    <input type="number" class="form-control" name="cuarto_cuatro_local" id="cuarto_cuatro_local" min="0" value="0" required>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -181,13 +188,13 @@ if (@$_REQUEST['idliga']) {
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Cuarto Uno* :</label>
-                                                                    <input type="number" class="form-control" name="cuarto_uno_visitante" id="cuarto_uno_visitante" min="0" required>
+                                                                    <input type="number" class="form-control" name="cuarto_uno_visitante" id="cuarto_uno_visitante" min="0" value="0" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Cuarto Dos* :</label>
-                                                                    <input type="number" class="form-control" name="cuarto_dos_visitante" id="cuarto_dos_visitante" min="0" required>
+                                                                    <input type="number" class="form-control" name="cuarto_dos_visitante" id="cuarto_dos_visitante" min="0" value="0" required>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -195,13 +202,13 @@ if (@$_REQUEST['idliga']) {
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Cuarto Tres* :</label>
-                                                                    <input type="number" class="form-control" name="cuarto_tres_visitante" id="cuarto_tres_visitante" min="0" required>
+                                                                    <input type="number" class="form-control" name="cuarto_tres_visitante" id="cuarto_tres_visitante" min="0" value="0" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Cuarto Cuatro* :</label>
-                                                                    <input type="number" class="form-control" name="cuarto_cuatro_visitante" id="cuarto_cuatro_visitante" min="0" required>
+                                                                    <input type="number" class="form-control" name="cuarto_cuatro_visitante" id="cuarto_cuatro_visitante" min="0" value="0" required>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -214,7 +221,7 @@ if (@$_REQUEST['idliga']) {
                                         <div id="dv_guardar_partido">
                                             <div class="col-sm-12">
                                                 <div style="text-align: center;">
-                                                    <input class="btn btn-primary btnguardar" form="partido_informationform" modal="partido-modal" type="button" value="Guardar" adicional="promedios_generales-include/cargarPromedios.php" id="guardar_partido">
+                                                    <input class="btn btn-primary btnguardar" form="partido_informationform" modal="partido-modal" type="button" value="Guardar" adicional="promedios_generales-include/cargarPromediosGenerales.php" id="guardar_partido">
                                                 </div>
                                             </div>
                                         </div>
@@ -226,6 +233,10 @@ if (@$_REQUEST['idliga']) {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="min-height-200px" id="promedios_generales">
+                <?php include('include/cargarPromediosGenerales.php'); ?>
             </div>
         </div>
     </div>
