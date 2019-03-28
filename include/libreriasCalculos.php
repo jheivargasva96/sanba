@@ -17,3 +17,9 @@ function promediosGenerales($idliga){
     $promedios['visitante']['total'] = ($result['data'][0]['c4v'] + $result['data'][0]['c3v'] + $result['data'][0]['c2v'] + $result['data'][0]['c1v']) / $total['data'][0]['cant_partidos'];
     return $promedios;
 }
+
+function calcularPorcentaje($valor, $total){
+    $porcentaje = $valor * 100;
+    $porcentaje = $porcentaje / $total;
+    return $porcentaje;
+}

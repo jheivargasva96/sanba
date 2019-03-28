@@ -1,6 +1,6 @@
 
 $(".dial1").knob();
-$({ animatedVal: 0 }).animate({ animatedVal: $(".dial1").val() }, {
+$({ animatedVal: 0 }).animate({ animatedVal: $(".dial1").attr("porcentaje") }, {
     duration: 3000,
     easing: "swing",
     step: function () {
@@ -16,12 +16,13 @@ $({ animatedVal: 0 }).animate({ animatedVal: $(".dial2").val() }, {
     }
 });
 $(".dial3").knob();
-$({ animatedVal: 0 }).animate({ animatedVal: 200 }, {
+$({ animatedVal: 0 }).animate({ animatedVal: $(".dial3").attr("porcentaje") }, {
     duration: 3000,
     easing: "swing",
     step: function () {
         $(".dial3").val(Math.ceil(this.animatedVal)).trigger("change");
     }
+    
 });
 $(".dial4").knob();
 $({ animatedVal: 0 }).animate({ animatedVal: 35 }, {

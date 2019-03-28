@@ -15,7 +15,7 @@ $promedios = promediosGenerales($_SESSION['idliga']);
         <div class="bg-white pd-19 box-shadow border-radius-5 height-50-p">
             <br>
             <div class="progress-box text-center">
-                <input type="text" class="knob dial1" value="<?php echo($promedios['local']['c1']); ?>" data-width="100" data-height="100" data-thickness="0.05" data-fgColor="#0099ff" readonly>
+                <input type="text" class="knob dial1" porcentaje="<?php echo(calcularPorcentaje($promedios['local']['c1'],$promedios['local']['total'])); ?>" value="<?php echo($promedios['local']['c1']); ?>" data-width="100" data-height="100" data-thickness="0.05" data-fgColor="#0099ff" readonly>
                 <h5 class="text-blue padding-top-5 weight-250">Cuarto 1</h5>
             </div>
             <br>
@@ -25,7 +25,7 @@ $promedios = promediosGenerales($_SESSION['idliga']);
         <div class="bg-white pd-19 box-shadow border-radius-5 height-50-p">
             <br>
             <div class="progress-box text-center">
-                <input type="text" class="knob dial2" value="<?php echo($promedios['local']['c2']); ?>" data-width="100" data-height="100" data-thickness="0.05" data-fgColor="#41ccba" readonly>
+                <input type="text" class="knob dial2" porcentaje="<?php echo(calcularPorcentaje($promedios['local']['c1'],$promedios['local']['total'])); ?>" value="<?php echo($promedios['local']['c2']); ?>" data-width="100" data-height="100" data-thickness="0.05" data-fgColor="#41ccba" readonly>
                 <h5 class="text-light-green padding-top-5 weight-250">Cuarto 2</h5>
             </div>
             <br>
@@ -34,7 +34,7 @@ $promedios = promediosGenerales($_SESSION['idliga']);
     <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
         <div class="bg-white pd-30 box-shadow border-radius-5 height-100-p">
             <div class="progress-box text-center">
-                <input type="text" class="knob dial3" value="200" data-width="120" data-height="120" data-thickness="0.05" data-fgColor="#f56767" readonly>
+                <input type="text" class="knob dial3" porcentaje="<?php echo(calcularPorcentaje(200,400)); ?>" value="200" data-width="120" data-height="120" data-thickness="0.05" data-fgColor="#f56767" readonly>
                 <h5 class="text-light-orange padding-top-10 weight-500">Projects Speed</h5>
                 <span class="font-14">90% Average <i class="fa fa-line-chart"></i></span>
             </div>
@@ -43,7 +43,7 @@ $promedios = promediosGenerales($_SESSION['idliga']);
     <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
         <div class="bg-white pd-30 box-shadow border-radius-5 height-100-p">
             <div class="progress-box text-center">
-                <input type="text" class="knob dial4" value="35" data-width="120" data-height="120" data-thickness="0.05" data-fgColor="#a683eb" readonly>
+                <input type="text" class="knob dial4" porcentaje="<?php echo(calcularPorcentaje($promedios['local']['c1'],$promedios['local']['total'])); ?>" value="35" data-width="120" data-height="120" data-thickness="0.05" data-fgColor="#a683eb" readonly>
                 <h5 class="text-light-purple padding-top-10 weight-500">Panding Orders</h5>
                 <span class="font-14">35% Average <i class="fa fa-line-chart"></i></span>
             </div>
