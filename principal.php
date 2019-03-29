@@ -56,7 +56,7 @@ if (@$_REQUEST['idliga']) {
                                                     name="nombre" id="nombre" required>
                                                 <input type="hidden" name="table" id="table" value="equipo">
                                                 <input type="hidden" name="liga_idliga" id="liga_idliga"
-                                                    value="<? echo $_SESSION['idliga']; ?>">
+                                                    value="<?php echo $_SESSION['idliga']; ?>">
                                                 <div class="input-group-append custom">
                                                     <span class="input-group-text">
                                                         <i class="icon-copy fa fa-gamepad" aria-hidden="true"></i>
@@ -134,7 +134,7 @@ if (@$_REQUEST['idliga']) {
                                                                     <label class="col-sm-4 col-md-4 col-form-label">Equipo Local* :</label>
                                                                     <div class="col-sm-8 col-md-8">
                                                                         <select class="custom-select col-12" name="equipo_local" id="equipo_local" required>
-                                                                            <? include('include/cargarEquipos.php'); ?>
+                                                                            <?php include('include/cargarEquipos.php'); ?>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -178,7 +178,7 @@ if (@$_REQUEST['idliga']) {
                                                                     <label class="col-sm-3 col-md-4 col-form-label">Equipo Visitante* :</label>
                                                                     <div class="col-sm-9 col-md-8">
                                                                         <select class="custom-select col-12" name="equipo_visitante" id="equipo_visitante" required>
-                                                                            <? include('include/cargarEquipos.php'); ?>
+                                                                            <?php include('include/cargarEquipos.php'); ?>
                                                                         </select>
                                                                     </div>
                                                                 </div>

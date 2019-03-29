@@ -1,4 +1,4 @@
-<?
+<?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/sanba/db/conexion.php';
 
 function promediosGenerales($idliga){
@@ -23,3 +23,4 @@ function calcularPorcentaje($valor, $total){
     $porcentaje = $porcentaje / $total;
     return $porcentaje;
 }
+?>

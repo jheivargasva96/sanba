@@ -1,4 +1,4 @@
-<?
+<?php
 require $_SERVER['DOCUMENT_ROOT'] . '/sanba/db/conexion.php';
 
 $result = selectSql("idliga,nombre","liga");
@@ -30,3 +30,4 @@ for ($i=0; $i < $result['rows'] ; $i++) {
 }
 
 echo '</div>';
+?>
