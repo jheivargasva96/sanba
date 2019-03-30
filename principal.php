@@ -114,9 +114,7 @@ if (@$_REQUEST['idliga']) {
                                                     <div class="form-group row">
                                                         <label class="col-sm-12 col-md-3 col-form-label">Fecha</label>
                                                         <div class="col-sm-12 col-md-9">
-                                                            <input type="text" class="form-control" name="fecha_partido"
-                                                                id="fecha_partido" value="<?php echo date('Y-m-d'); ?>"
-                                                                readonly>
+                                                            <input type="text" class="form-control date-picker" name="fecha_partido" id="fecha_partido" otro="<?php echo date('Y-m-d'); ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -168,6 +166,14 @@ if (@$_REQUEST['idliga']) {
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label>Total :</label>
+                                                                    <input type="text" class="form-control" id="total_local" value="0" readonly>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </section>
 
                                                     <h5>Equipo Visitante</h5>
@@ -209,6 +215,14 @@ if (@$_REQUEST['idliga']) {
                                                                 <div class="form-group">
                                                                     <label>Cuarto Cuatro* :</label>
                                                                     <input type="number" class="form-control" name="cuarto_cuatro_visitante" id="cuarto_cuatro_visitante" min="0" value="0" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label>Total :</label>
+                                                                    <input type="text" class="form-control" id="total_visitante" value="0" readonly>
                                                                 </div>
                                                             </div>
                                                         </div>

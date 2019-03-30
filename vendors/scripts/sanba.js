@@ -64,6 +64,8 @@ function calculaGanador(){
         ganador = $('select[name="equipo_visitante"] option:selected').text();
     }
     $("#ganador").val(ganador);
+    $("#total_local").val(total_local);
+    $("#total_visitante").val(total_visitante);
 }
 
 function validarNumero(dato){
@@ -114,3 +116,9 @@ $(document).on("blur", '#cuarto_cuatro_visitante', function () {
     calculaGanador();
 });
 
+$(function() {
+    $('#fecha_partido').datepicker({
+        dateFormat:'yyyy-mm-dd'
+    });
+    $('#fecha_partido').val($('#fecha_partido').attr('otro'));
+});
