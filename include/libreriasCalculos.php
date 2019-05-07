@@ -15,6 +15,14 @@ function promediosGenerales($idliga){
     $promedios['visitante']['c3'] = $result['data'][0]['c3v'] / $total['data'][0]['cant_partidos'];
     $promedios['visitante']['c4'] = $result['data'][0]['c4v'] / $total['data'][0]['cant_partidos'];
     $promedios['visitante']['total'] = ($result['data'][0]['c4v'] + $result['data'][0]['c3v'] + $result['data'][0]['c2v'] + $result['data'][0]['c1v']) / $total['data'][0]['cant_partidos'];
+
+    //Suma de promedios
+    $promedios['suma']['c1'] = $promedios['local']['c1'] + $promedios['visitante']['c1'];
+    $promedios['suma']['c2'] = $promedios['local']['c2'] + $promedios['visitante']['c2'];
+    $promedios['suma']['c3'] = $promedios['local']['c3'] + $promedios['visitante']['c3'];
+    $promedios['suma']['c4'] = $promedios['local']['c4'] + $promedios['visitante']['c4'];
+    $promedios['suma']['total'] = $promedios['local']['total'] + $promedios['visitante']['total'];
+
     return $promedios;
 }
 

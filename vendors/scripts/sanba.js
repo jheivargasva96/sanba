@@ -21,7 +21,9 @@ function saveInformation(selector) {
                 } else {
                     action = 'warning';
                 }
-                $("#" + form).find('input[type=text]').val('');
+                $("#" + form).find('input').val('');
+                $("#" + form).find('select').val('');
+                alert('Fuck');
                 $("#showAlerts").attr("data-target", "#" + action + "-modal");
                 $("#alert-" + action).html('<p>' + datos.message + '</p>');
                 $("#showAlerts").click();
