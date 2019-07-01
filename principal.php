@@ -228,6 +228,7 @@ if (@$_REQUEST['idliga']) {
                                                         </div>
                                                     </section>
                                                     <input type="hidden" name="table" id="table" value="partido">
+                                                    <input type="hidden" name="idliga2" id="idliga2" value="<?php echo $_SESSION['idliga']; ?>">
                                                 </form>
                                             </div>
                                         </div>
