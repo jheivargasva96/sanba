@@ -1,10 +1,10 @@
 	<div class="left-side-bar">
 		<div class="brand-logo">
 			<a href="index.php">
-				<img src="vendors/images/deskapp-logo.png" alt="">
+				<img src="vendors/images/sanba_logo.jpeg" alt="" id="img_logo">
 			</a>
 		</div>
-		<div class="menu-block customscroll">
+		<div class="menu-block customscroll" id="barra_lateral">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
 					<li class="dropdown">

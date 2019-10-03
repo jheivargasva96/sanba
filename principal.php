@@ -22,7 +22,7 @@ if (@$_REQUEST['idliga']) {
     <?php include('include/sidebar.php'); ?>
     <div class="main-container">
         <?php include('alerts.php'); ?>
-        <div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
+        <div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10" id="fondo_principal">
             <div class="min-height-200px">
                 <div class="row clearfix">
                     <div class="col-lg-3 col-md-6 col-sm-12 mb-30">

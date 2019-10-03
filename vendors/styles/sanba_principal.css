@@ -5,3 +5,19 @@
 #dv_guardar_partido{
     display: none;
 }
+
+#img_logo{
+    width: 250px;
+    height: 69px;
+    margin-left: -20px;
+    max-width: 250px;
+}
+
+#fondo_principal, #barra_encabezado, #barra_lateral{
+    background-image: url('../images/sanba_fondo.jpeg');
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+}

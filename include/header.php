@@ -3,7 +3,7 @@
     <body>
         <div class="pre-loader"></div>
         <div class="header clearfix">
-            <div class="header-right">
+            <div class="header-right" id="barra_encabezado">
                 <div class="brand-logo">
                     <a href="index.php">
                         <img src="vendors/images/logo.png" alt="" class="mobile-logo">
