@@ -35,7 +35,6 @@ function saveInformation(selector) {
                 var mes = fecha.getMonth();
                 mes = mes + 1;
                 var dia = fecha.getDate();
-                dia = dia + 1;
                 if (mes < 10) { mes = '0' + mes }
                 if (dia < 10) { dia = '0' + dia }
                 $(".date-picker").val(year + '-' + mes + "-" + dia);

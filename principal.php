@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set('America/Bogota');
 if (@$_REQUEST['idliga']) {
     $_SESSION['idliga'] = @$_REQUEST['idliga'];
 } elseif (!$_SESSION['idliga']) {
