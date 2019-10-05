@@ -52,11 +52,9 @@ if (@$_REQUEST['idliga']) {
                                         <h2 class="text-center mb-30">Adicionar Equipo</h2>
                                         <form id="informationform">
                                             <div class="input-group custom input-group-lg">
-                                                <input type="text" class="form-control" placeholder="Nombre Equipo*"
-                                                    name="nombre" id="nombre" required>
+                                                <input type="text" class="form-control" placeholder="Nombre Equipo*" name="nombre" id="nombre" required>
                                                 <input type="hidden" name="table" id="table" value="equipo">
-                                                <input type="hidden" name="liga_idliga" id="liga_idliga"
-                                                    value="<?php echo $_SESSION['idliga']; ?>">
+                                                <input type="hidden" name="liga_idliga" id="liga_idliga" value="<?php echo $_SESSION['idliga']; ?>">
                                                 <div class="input-group-append custom">
                                                     <span class="input-group-text">
                                                         <i class="icon-copy fa fa-gamepad" aria-hidden="true"></i>

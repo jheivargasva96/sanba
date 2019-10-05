@@ -6,7 +6,12 @@ function saveInformation(selector) {
     //event.preventDefault();
     var form = selector.attr('form');
     var result = document.getElementById(form).checkValidity();
+    var hidden = new Array();
+    $("#" + form).find('input[type=hidden]').each(function () {
+        hidden[$(this).attr('id')] = $(this).val();
+    });
     if (result) {
+        $("#" + form).find('[required]').removeClass('error');
         var modal = selector.attr('modal');
         $("#" + modal).modal('hide');
         $.ajax({
@@ -23,7 +28,20 @@ function saveInformation(selector) {
                 }
                 $("#" + form).find('input').val('');
                 $("#" + form).find('select').val('');
-                alert('Fuck');
+                $("a[href='#previous']").click();
+                $("#" + form).find('input[type=number]').val('0');
+                var fecha = new Date();
+                var year = fecha.getFullYear();
+                var mes = fecha.getMonth();
+                mes = mes + 1;
+                var dia = fecha.getDate();
+                dia = dia + 1;
+                if (mes < 10) { mes = '0' + mes }
+                if (dia < 10) { dia = '0' + dia }
+                $(".date-picker").val(year + '-' + mes + "-" + dia);
+                for (x in hidden) {
+                    $("#" + form).find("#" + x).val(hidden[x]);
+                }
                 $("#showAlerts").attr("data-target", "#" + action + "-modal");
                 $("#alert-" + action).html('<p>' + datos.message + '</p>');
                 $("#showAlerts").click();
@@ -32,7 +50,7 @@ function saveInformation(selector) {
                     adicional = adicional.split('-');
                     $("#" + adicional[0]).load(adicional[1]);
                 } else {
-                    window.location.href="principal.php";
+                    window.location.href = "principal.php";
                 }
             }
         });
@@ -47,7 +65,7 @@ $(document).on("click", '.submit_liga', function () {
     $("#form_liga" + form).submit();
 });
 
-function calculaGanador(){
+function calculaGanador() {
     // Las variables estan definidas como c:cuarto 1:numero de cuarto l/v: local/visitante
     var ganardor = '';
     var c1l = $("#cuarto_uno_local").val();
@@ -70,7 +88,7 @@ function calculaGanador(){
     $("#total_visitante").val(total_visitante);
 }
 
-function validarNumero(dato){
+function validarNumero(dato) {
     if (parseInt(dato)) {
         return parseInt(dato);
     } else {
@@ -118,9 +136,9 @@ $(document).on("blur", '#cuarto_cuatro_visitante', function () {
     calculaGanador();
 });
 
-$(function() {
+$(function () {
     $('#fecha_partido').datepicker({
-        dateFormat:'yyyy-mm-dd'
+        dateFormat: 'yyyy-mm-dd'
     });
     $('#fecha_partido').val($('#fecha_partido').attr('otro'));
 });
