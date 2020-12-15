@@ -1,5 +1,14 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/sanba/db/conexion.php';
+$max_salida=6; 
+$inicial=$ruta="";
+while($max_salida>0){
+  if(is_file($ruta."define.php")){
+    $inicial=$ruta;
+  }
+  $ruta.="../";
+  $max_salida--;
+}
+include_once $inicial . 'db/conexion.php';
 
 function promediosGenerales($idliga){
     $result = selectSql("SUM(cuarto_uno_local) c1l, SUM(cuarto_dos_local) c2l, SUM(cuarto_tres_local) c3l, SUM(cuarto_cuatro_local) c4l, SUM(cuarto_uno_visitante) c1v, SUM(cuarto_dos_visitante) c2v, SUM(cuarto_tres_visitante) c3v, SUM(cuarto_cuatro_visitante) c4v","partido, equipo", "equipo_local = idequipo AND liga_idliga = " . $idliga);

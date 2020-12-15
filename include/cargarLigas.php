@@ -1,5 +1,15 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/sanba/db/conexion.php';
+$max_salida=6; 
+$inicial=$ruta="";
+while($max_salida>0){
+  if(is_file($ruta."define.php")){
+    $inicial=$ruta;
+  }
+  $ruta.="../";
+  $max_salida--;
+}
+
+include_once $inicial . 'db/conexion.php';
 
 $result = selectSql("idliga,nombre","liga");
 

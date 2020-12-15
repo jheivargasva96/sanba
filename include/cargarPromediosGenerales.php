@@ -2,7 +2,18 @@
 if(!@$_SESSION['idliga']){
     session_start();
 }
-require $_SERVER['DOCUMENT_ROOT'] . '/sanba/include/libreriasCalculos.php';
+
+$max_salida=6; 
+$inicial=$ruta="";
+while($max_salida>0){
+  if(is_file($ruta."define.php")){
+    $inicial=$ruta;
+  }
+  $ruta.="../";
+  $max_salida--;
+}
+
+include_once $inicial . 'include/libreriasCalculos.php';
 $promedios = promediosGenerales($_SESSION['idliga']);
 ?>
 <center><h1 class="text-blue">PROMEDIOS GENERALES</h1></center>

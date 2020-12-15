@@ -7,7 +7,7 @@ function dbConectar(){
     global $connect;
     try{
         // Conexión a la base de datos
-        $connect = new PDO('mysql:host=localhost;dbname=sanba', 'root', '');
+        $connect = new PDO('mysql:host=localhost;dbname=sanbadev_s4nb2020', 'sanbadev_juanda', '0$EWFgYDG][G');
         $connect ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }catch(PDOException $e){
         echo "ERROR: " . $e->getMessage();
